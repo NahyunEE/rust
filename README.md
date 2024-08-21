@@ -1,5 +1,6 @@
 # rust
-Rust Study
+Personal Rust Study
+러스트 스터디 준비
 
 
 ### Pin Map 
