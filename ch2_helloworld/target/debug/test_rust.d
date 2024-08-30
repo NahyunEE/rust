@@ -1,1 +1,1 @@
-C:\workspace\rust\test_rust\target\debug\test_rust.exe: C:\workspace\rust\test_rust\src\main.rs
+c:\workspace\rust\ch2_helloworld\target\debug\test_rust.exe: c:\workspace\rust\ch2_helloworld\src\main.rs

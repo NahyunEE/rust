@@ -1,0 +1,29 @@
+name: Coverage
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: coverage
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Setup nightly Rust toolchain with caching
+        uses: brndnmtthws/rust-action@v1
+        with:
+          toolchain: nightly
+      - run: cargo tarpaulin --features serde,nightly --out Xml
+      - name: Upload to codecov.io
+        uses: codecov/codecov-action@v4
+        with:
+          fail_ci_if_error: true
+          token: ${{ secrets.CODECOV_TOKEN }}
