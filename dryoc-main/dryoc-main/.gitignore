@@ -1,5 +1,0 @@
-/target
-Cargo.lock
-
-# Ignore IDE stuff
-.vscode/
